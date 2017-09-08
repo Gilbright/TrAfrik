@@ -1,0 +1,30 @@
+﻿@model IEnumerable<TurAfrikb.Models.Product>
+    @{
+        ViewBag.Title = "Index";
+    }
+
+    <h2>PRODUCTS/ÜRÜNLER</h2>
+
+
+
+    
+    <div class="row">
+        @foreach (var item in Model)
+        {
+
+            <div class="col-md-3" style="border:5px dashed inset">
+                <img style="height:100px; width:100px" src="@item.ProdImageURL" />
+              <br>@Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.Price) TL
+                @Html.DisplayFor(modelItem => item.Country)
+                @Html.DisplayFor(modelItem => item.Quantity)
+                @Html.ActionLink("Ürünü İncele", "Details", new { id = item.Id })
+            </div>
+        }
+    </div>
+
+
+
+
+
+
